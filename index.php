@@ -88,7 +88,7 @@ try {
     $root = 'http' . (isset($_SERVER['HTTPS']) ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/';
     $eventobj = new ZCiCalNode("VEVENT", $icalobj->curnode);
     $eventobj->addNode(new ZCiCalDataNode("SUMMARY:Webcal Fixer"));
-    $eventobj->addNode(new ZCiCalDataNode("DESCRIPTION:This calender is originally from (" . $_GET['webcal'] . ") and has been converted by Webcal Fixer (" . $root . ").\n\nWebcal Fixer is a tool designed to fix bad webcal or icals. It converts any 'fake' all day events to proper all day events, clearing up valuable space in your calendar view. The project converts any event going from 12am to 11:59pm across one or multiple days to an all day event across the day or days.\n\nThis project is created by Matt Cowley (https://mattcowley.co.uk/). (#ad)"));
+    $eventobj->addNode(new ZCiCalDataNode("DESCRIPTION:This calendar is originally from (" . $_GET['webcal'] . ") and has been converted by Webcal Fixer (" . $root . ").\n\nWebcal Fixer is a tool designed to fix bad webcal or icals. It converts any 'fake' all day events to proper all day events, clearing up valuable space in your calendar view. The project converts any event going from 12am to 11:59pm across one or multiple days to an all day event across the day or days.\n\nThis project is created by Matt Cowley (https://mattcowley.co.uk/). (#ad)"));
     $eventobj->addNode(new ZCiCalDataNode("DTSTART;VALUE=DATE:" . date("Ymd")));
     $eventobj->addNode(new ZCiCalDataNode("DTEND;VALUE=DATE:" . date("Ymd")));
     $eventobj->addNode(new ZCiCalDataNode("URL:webcal://" . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"]));
